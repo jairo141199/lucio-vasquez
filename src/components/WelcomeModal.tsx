@@ -60,29 +60,29 @@ export function WelcomeModal() {
             exit={{ opacity: 0, scale: 0.96, y: 8 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-sm overflow-hidden rounded-2xl border border-[#D4AF37]/30 bg-[#0F2A20] text-center shadow-[0_20px_90px_rgba(0,0,0,0.5)]"
+            className="relative w-full max-w-lg overflow-hidden rounded-2xl border border-[#D4AF37]/30 bg-[#0F2A20] text-center shadow-[0_20px_90px_rgba(0,0,0,0.5)]"
           >
             <button
               onClick={() => setOpen(false)}
               aria-label="Cerrar"
-              className="absolute right-3 top-3 z-30 flex h-8 w-8 items-center justify-center rounded-full bg-black/30 text-[#F3EFE0] transition-colors hover:bg-black/50"
+              className="absolute right-4 top-4 z-30 flex h-9 w-9 items-center justify-center rounded-full bg-black/30 text-[#F3EFE0] transition-colors hover:bg-black/50"
             >
-              <X className="h-4 w-4" />
+              <X className="h-5 w-5" />
             </button>
 
             {revealed && <Confetti />}
 
-            <div className="flex flex-col items-center px-6 pb-7 pt-10">
-              <h2 className="font-serif text-xl text-[#F3EFE0]">
+            <div className="flex flex-col items-center px-8 pb-10 pt-12">
+              <h2 className="font-serif text-3xl text-[#F3EFE0]">
                 {revealed ? "¡Felicidades!" : "¡Gira la ruleta de la suerte!"}
               </h2>
-              <p className="mt-2 text-sm text-[#F3EFE0]/70">
+              <p className="mt-2 text-base text-[#F3EFE0]/70">
                 {revealed
                   ? "Ganaste una consulta gratis con Lucio Vasquez."
                   : "Tu premio está a punto de revelarse..."}
               </p>
 
-              <div className="mt-6">
+              <div className="mt-8">
                 <PrizeWheel spin={spin} onDone={() => setRevealed(true)} />
               </div>
 
@@ -100,12 +100,12 @@ export function WelcomeModal() {
                       opacity: { delay: 0.3, duration: 0.3 },
                       y: { delay: 0.6, duration: 1.6, repeat: Infinity, ease: "easeInOut" },
                     }}
-                    className="pointer-events-none absolute -top-11 right-2 z-10 flex flex-col items-end"
+                    className="pointer-events-none absolute -top-14 right-2 z-10 flex flex-col items-end"
                   >
-                    <span className="rotate-6 whitespace-nowrap rounded-full bg-[#F3EFE0] px-3 py-1 text-xs font-bold text-[#0B2818] shadow-md">
+                    <span className="rotate-6 whitespace-nowrap rounded-full bg-[#F3EFE0] px-4 py-1.5 text-sm font-bold text-[#0B2818] shadow-md">
                       ¡Reclama tu premio!
                     </span>
-                    <CurvedArrow className="h-12 w-12 translate-x-3 -scale-x-100" />
+                    <CurvedArrow className="h-14 w-14 translate-x-3 -scale-x-100" />
                   </motion.div>
 
                   <motion.span
@@ -121,9 +121,9 @@ export function WelcomeModal() {
                     onClick={() => setOpen(false)}
                     animate={{ scale: [1, 1.035, 1] }}
                     transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-                    className="relative flex items-center justify-center gap-2.5 rounded-full bg-[#25D366] px-6 py-3.5 text-base font-semibold text-[#0B1A0E] shadow-[0_0_30px_rgba(37,211,102,0.5)]"
+                    className="relative flex items-center justify-center gap-2.5 rounded-full bg-[#25D366] px-8 py-4 text-lg font-semibold text-[#0B1A0E] shadow-[0_0_30px_rgba(37,211,102,0.5)]"
                   >
-                    <WhatsAppIcon className="h-6 w-6" />
+                    <WhatsAppIcon className="h-7 w-7" />
                     Reclamar por WhatsApp
                   </motion.a>
                 </motion.div>
