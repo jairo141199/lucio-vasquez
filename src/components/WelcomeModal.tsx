@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { PrizeWheel } from "./PrizeWheel";
+import { Confetti } from "./Confetti";
 import { WhatsAppIcon } from "./icons/WhatsAppIcon";
 import { CurvedArrow } from "./icons/CurvedArrow";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
@@ -68,6 +69,8 @@ export function WelcomeModal() {
             >
               <X className="h-4 w-4" />
             </button>
+
+            {revealed && <Confetti />}
 
             <div className="flex flex-col items-center px-6 pb-7 pt-10">
               <h2 className="font-serif text-xl text-[#F3EFE0]">

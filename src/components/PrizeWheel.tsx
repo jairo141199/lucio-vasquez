@@ -27,6 +27,11 @@ const GRADIENT = SEGMENTS.map(
   (segment, i) => `${segment.color} ${i * SEGMENT_ANGLE}deg ${(i + 1) * SEGMENT_ANGLE}deg`,
 ).join(", ");
 
+const WHEEL_SIZE = 224;
+const LABEL_RADIUS = 72;
+const LABEL_WIDTH = 78;
+const LABEL_HEIGHT = 28;
+
 interface PrizeWheelProps {
   spin: boolean;
   onDone?: () => void;
@@ -34,7 +39,7 @@ interface PrizeWheelProps {
 
 export function PrizeWheel({ spin, onDone }: PrizeWheelProps) {
   return (
-    <div className="relative mx-auto flex h-56 w-56 items-center justify-center">
+    <div className="relative mx-auto flex items-center justify-center" style={{ height: WHEEL_SIZE, width: WHEEL_SIZE }}>
       <div className="absolute -top-1 z-20 h-0 w-0 border-x-[10px] border-t-[16px] border-x-transparent border-t-[#F3EFE0]" />
 
       <motion.div
@@ -48,23 +53,22 @@ export function PrizeWheel({ spin, onDone }: PrizeWheelProps) {
       >
         {SEGMENTS.map((segment, i) => {
           const angle = i * SEGMENT_ANGLE + SEGMENT_ANGLE / 2;
-          const flip = angle > 90 && angle < 270;
           return (
-            <div
+            <span
               key={segment.label}
-              className="absolute left-1/2 top-1/2 h-0 w-0 origin-top-left"
-              style={{ transform: `rotate(${angle}deg)` }}
+              className="absolute flex items-center justify-center text-center text-[10px] font-semibold leading-tight"
+              style={{
+                top: "50%",
+                left: "50%",
+                width: LABEL_WIDTH,
+                height: LABEL_HEIGHT,
+                margin: `${-LABEL_HEIGHT / 2}px 0 0 ${-LABEL_WIDTH / 2}px`,
+                transform: `rotate(${angle}deg) translateY(-${LABEL_RADIUS}px) rotate(${-angle}deg)`,
+                color: segment.label === "Consulta Gratis" ? "#0B2818" : "#F3EFE0",
+              }}
             >
-              <span
-                className="absolute -left-14 top-3 block w-28 text-center text-[10px] font-semibold leading-tight"
-                style={{
-                  transform: flip ? "rotate(180deg)" : undefined,
-                  color: segment.label === "Consulta Gratis" ? "#0B2818" : "#F3EFE0",
-                }}
-              >
-                {segment.label}
-              </span>
-            </div>
+              {segment.label}
+            </span>
           );
         })}
       </motion.div>
