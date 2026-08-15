@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import { Candle, CrystalBall, LuckyCoins, MoonStars, TarotCard } from "./MysticArt";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
@@ -10,9 +11,19 @@ export function GalleryCard({ item, index }: { item: GalleryItem; index: number 
 
   return (
     <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/10 bg-[#123B29]">
-      <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#1C6B4A] to-[#0B2818]">
-        <Placeholder className="h-14 w-14" />
-      </div>
+      {item.image ? (
+        <Image
+          src={item.image}
+          alt={item.caption}
+          fill
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          sizes="(max-width: 640px) 50vw, 33vw"
+        />
+      ) : (
+        <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#1C6B4A] to-[#0B2818]">
+          <Placeholder className="h-14 w-14" />
+        </div>
+      )}
 
       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-4">
         <p className="mb-3 text-sm font-medium text-[#F3EFE0]">{item.caption}</p>

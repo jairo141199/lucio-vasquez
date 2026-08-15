@@ -1,13 +1,15 @@
 export interface GalleryItem {
   id: string;
   caption: string;
+  /** Ruta en /public/gallery/. Si no se define, se usa un marcador visual. */
+  image?: string;
 }
 
 export const GALLERY: GalleryItem[] = [
-  { id: "item-1", caption: "Números de la suerte revelados" },
-  { id: "item-2", caption: "Limpieza espiritual" },
-  { id: "item-3", caption: "Consulta virtual por WhatsApp" },
-  { id: "item-4", caption: "Consulta presencial en Miami" },
-  { id: "item-5", caption: "Ritual de abre caminos" },
-  { id: "item-6", caption: "Guía espiritual personalizada" },
+  { id: "item-1", caption: "Tus números de la suerte", image: "/gallery/numeros-suerte.jpg" },
+  { id: "item-2", caption: "Rituales de abre caminos", image: "/gallery/portal-magico.jpg" },
+  { id: "item-3", caption: "Abundancia y prosperidad", image: "/gallery/abundancia-prosperidad.jpg" },
+  { id: "item-4", caption: "Números personalizados para la lotería", image: "/gallery/loteria-trebol.jpg" },
+  { id: "item-5", caption: "Consulta virtual por WhatsApp" },
+  { id: "item-6", caption: "Consulta presencial en Miami" },
 ];

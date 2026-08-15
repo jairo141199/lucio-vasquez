@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { MapPin, MessageCircle, Sparkles } from "lucide-react";
-import { PortraitPlaceholder } from "./MysticArt";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 import { LOCATION, TAGLINE } from "@/lib/business";
 
@@ -60,7 +60,9 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="mx-auto flex items-center justify-center"
         >
-          <PortraitPlaceholder className="h-72 w-72 shadow-[0_20px_80px_rgba(212,175,55,0.25)] ring-2 ring-[#D4AF37]/50 rounded-full sm:h-96 sm:w-96" />
+          <div className="relative h-72 w-72 overflow-hidden rounded-full shadow-[0_20px_80px_rgba(212,175,55,0.25)] ring-2 ring-[#D4AF37]/50 sm:h-96 sm:w-96">
+            <Image src="/hero.jpg" alt="Lucio Vasquez" fill className="object-cover" priority />
+          </div>
         </motion.div>
       </div>
     </section>
