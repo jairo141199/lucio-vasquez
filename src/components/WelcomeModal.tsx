@@ -60,12 +60,12 @@ export function WelcomeModal() {
             exit={{ opacity: 0, scale: 0.96, y: 8 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-lg overflow-hidden rounded-2xl border border-[#D4AF37]/30 bg-[#0F2A20] text-center shadow-[0_20px_90px_rgba(0,0,0,0.5)]"
+            className="relative w-full max-w-lg overflow-hidden rounded-2xl border border-[#D4AF37]/30 bg-[#1A0E2E] text-center shadow-[0_20px_90px_rgba(0,0,0,0.5)]"
           >
             <button
               onClick={() => setOpen(false)}
               aria-label="Cerrar"
-              className="absolute right-4 top-4 z-30 flex h-9 w-9 items-center justify-center rounded-full bg-black/30 text-[#F3EFE0] transition-colors hover:bg-black/50"
+              className="absolute right-4 top-4 z-30 flex h-9 w-9 items-center justify-center rounded-full bg-black/30 text-[#F4EBDD] transition-colors hover:bg-black/50"
             >
               <X className="h-5 w-5" />
             </button>
@@ -73,10 +73,10 @@ export function WelcomeModal() {
             {revealed && <Confetti />}
 
             <div className="flex flex-col items-center px-8 pb-10 pt-12">
-              <h2 className="font-serif text-3xl text-[#F3EFE0]">
+              <h2 className="font-serif text-3xl text-[#F4EBDD]">
                 {revealed ? "¡Felicidades!" : "¡Gira la ruleta de la suerte!"}
               </h2>
-              <p className="mt-2 text-base text-[#F3EFE0]/70">
+              <p className="mt-2 text-base text-[#F4EBDD]/70">
                 {revealed
                   ? "Ganaste una consulta gratis con Lucio Vasquez."
                   : "Tu premio está a punto de revelarse..."}
@@ -102,7 +102,7 @@ export function WelcomeModal() {
                     }}
                     className="pointer-events-none absolute -top-14 right-2 z-10 flex flex-col items-end"
                   >
-                    <span className="rotate-6 whitespace-nowrap rounded-full bg-[#F3EFE0] px-4 py-1.5 text-sm font-bold text-[#0B2818] shadow-md">
+                    <span className="rotate-6 whitespace-nowrap rounded-full bg-[#F4EBDD] px-4 py-1.5 text-sm font-bold text-[#0E0B12] shadow-md">
                       ¡Reclama tu premio!
                     </span>
                     <CurvedArrow className="h-14 w-14 translate-x-3 -scale-x-100" />

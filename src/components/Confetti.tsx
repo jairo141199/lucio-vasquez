@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const COLORS = ["#D4AF37", "#2F9E60", "#F3EFE0", "#1C6B4A", "#FFD966"];
+const COLORS = ["#D4AF37", "#7B3FE4", "#F4EBDD", "#176B4D", "#FFD966"];
 const PARTICLE_COUNT = 28;
 
 function random(min: number, max: number) {

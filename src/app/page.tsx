@@ -11,7 +11,7 @@ import { WelcomeModal } from "@/components/WelcomeModal";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#0B2818]">
+    <div className="flex min-h-screen flex-col bg-[#0E0B12]">
       <WelcomeModal />
       <Navbar />
       <main className="flex-1">

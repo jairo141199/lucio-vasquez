@@ -9,12 +9,12 @@ interface Segment {
 }
 
 const SEGMENTS: Segment[] = [
-  { label: "10% Dcto.", color: "#0F4A31" },
+  { label: "10% Dcto.", color: "#24113D" },
   { label: "Consulta Gratis", color: "#D4AF37" },
-  { label: "15% Dcto.", color: "#123B29" },
-  { label: "Números Gratis", color: "#1C6B4A" },
-  { label: "20% Dcto.", color: "#0F4A31" },
-  { label: "Limpia -10%", color: "#123B29" },
+  { label: "15% Dcto.", color: "#7B3FE4" },
+  { label: "Números Gratis", color: "#176B4D" },
+  { label: "20% Dcto.", color: "#24113D" },
+  { label: "Limpia -10%", color: "#7B3FE4" },
 ];
 
 const WINNING_INDEX = 1;
@@ -40,7 +40,7 @@ interface PrizeWheelProps {
 export function PrizeWheel({ spin, onDone }: PrizeWheelProps) {
   return (
     <div className="relative mx-auto flex items-center justify-center" style={{ height: WHEEL_SIZE, width: WHEEL_SIZE }}>
-      <div className="absolute -top-1 z-20 h-0 w-0 border-x-[13px] border-t-[20px] border-x-transparent border-t-[#F3EFE0]" />
+      <div className="absolute -top-1 z-20 h-0 w-0 border-x-[13px] border-t-[20px] border-x-transparent border-t-[#F4EBDD]" />
 
       <motion.div
         className="relative h-full w-full overflow-hidden rounded-full border-[5px] border-[#D4AF37] shadow-[0_0_50px_rgba(212,175,55,0.35)]"
@@ -64,7 +64,7 @@ export function PrizeWheel({ spin, onDone }: PrizeWheelProps) {
                 height: LABEL_HEIGHT,
                 margin: `${-LABEL_HEIGHT / 2}px 0 0 ${-LABEL_WIDTH / 2}px`,
                 transform: `rotate(${angle}deg) translateY(-${LABEL_RADIUS}px) rotate(${-angle}deg)`,
-                color: segment.label === "Consulta Gratis" ? "#0B2818" : "#F3EFE0",
+                color: segment.label === "Consulta Gratis" ? "#0E0B12" : "#F4EBDD",
               }}
             >
               {segment.label}
@@ -73,7 +73,7 @@ export function PrizeWheel({ spin, onDone }: PrizeWheelProps) {
         })}
       </motion.div>
 
-      <div className="absolute z-20 flex h-16 w-16 items-center justify-center rounded-full bg-[#0B2818] ring-2 ring-[#D4AF37]">
+      <div className="absolute z-20 flex h-16 w-16 items-center justify-center rounded-full bg-[#0E0B12] ring-2 ring-[#D4AF37]">
         <Sparkles className="h-7 w-7 text-[#D4AF37]" />
       </div>
     </div>

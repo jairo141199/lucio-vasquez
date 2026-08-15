@@ -8,7 +8,7 @@ export function Services() {
     <section id="servicios" className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
       <div className="mx-auto max-w-2xl text-center">
         <p className="text-sm font-medium tracking-[0.25em] text-[#D4AF37]">SERVICIOS</p>
-        <h2 className="mt-3 font-serif text-3xl text-[#F3EFE0] sm:text-4xl">
+        <h2 className="mt-3 font-serif text-3xl text-[#F4EBDD] sm:text-4xl">
           Guía espiritual para cada momento de tu vida
         </h2>
       </div>
@@ -19,11 +19,11 @@ export function Services() {
           return (
             <div
               key={service.id}
-              className="rounded-2xl border border-white/10 bg-[#123B29]/60 p-6 transition-colors hover:border-[#D4AF37]/40"
+              className="rounded-2xl border border-white/10 bg-[#24113D]/60 p-6 transition-colors hover:border-[#D4AF37]/40"
             >
               <Icon className="h-14 w-14" />
-              <h3 className="mt-4 font-serif text-lg text-[#F3EFE0]">{service.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#F3EFE0]/65">{service.description}</p>
+              <h3 className="mt-4 font-serif text-lg text-[#F4EBDD]">{service.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-[#F4EBDD]/65">{service.description}</p>
             </div>
           );
         })}
